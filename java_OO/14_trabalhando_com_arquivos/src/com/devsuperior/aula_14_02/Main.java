@@ -1,4 +1,4 @@
-package com.devsuperior;
+package com.devsuperior.aula_14_02;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        File file = new File("/home/renato/ESTUDOS/Bootcamps/devsuperior-bootcamp-spring/java_OO/14_trabalhando_com_arquivos/in.txt");
+        File file = new File("/home/renato/ESTUDOS/Bootcamps/devsuperior-bootcamp-spring/java_OO/in.txt");
         Scanner sc = null;
 
         try {

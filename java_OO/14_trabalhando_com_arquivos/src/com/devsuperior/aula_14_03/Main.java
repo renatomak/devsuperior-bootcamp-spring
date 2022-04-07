@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String path = "/home/renato/ESTUDOS/Bootcamps/devsuperior-bootcamp-spring/java_OO/14_trabalhando_com_arquivos/in.txt";
+        String path = "/home/renato/ESTUDOS/Bootcamps/devsuperior-bootcamp-spring/java_OO/in.txt";
         FileReader fr = null;
         BufferedReader br = null;
 
