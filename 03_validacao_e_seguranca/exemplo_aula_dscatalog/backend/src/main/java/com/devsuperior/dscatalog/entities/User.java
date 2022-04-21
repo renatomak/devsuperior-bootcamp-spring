@@ -31,7 +31,9 @@ public class User implements Serializable {
 
     private String password;
 
-    @ManyToMany
+    /*Toda vez que buscar um usuário virá junto as Roles
+    * */
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tb_user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
