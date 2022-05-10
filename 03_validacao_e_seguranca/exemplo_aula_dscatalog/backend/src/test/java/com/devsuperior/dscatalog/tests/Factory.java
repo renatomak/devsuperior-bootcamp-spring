@@ -4,7 +4,6 @@ import com.devsuperior.dscatalog.dto.CategoryDto;
 import com.devsuperior.dscatalog.dto.ProductDto;
 import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.entities.Product;
-import org.checkerframework.checker.units.qual.C;
 
 import java.time.Instant;
 

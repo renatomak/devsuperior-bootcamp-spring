@@ -4,6 +4,9 @@ import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.entities.User;
 import lombok.*;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,10 +21,12 @@ public class UserDto implements Serializable {
 
     private Long id;
 
+    @NotBlank(message = "Campo obrigatório")
     private String firstName;
 
     private String lastName;
 
+    @Email(message = "Favor entrar com um email válido.")
     private String email;
 
     Set<RoleDto> roles = new HashSet<>();
