@@ -16,3 +16,5 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (4, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (4, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (4, 3);
+
+INSERT INTO tb_course (name, img_uri, img_gray_uri) VALUES ('Java', 'https://sinajuve.ibict.br/wp-content/uploads/2020/08/%C3%ADcone-cursos.png', 'https://sinajuve.ibict.br/wp-content/uploads/2020/08/%C3%ADcone-cursos.png');
