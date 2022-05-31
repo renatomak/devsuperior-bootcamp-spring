@@ -1,22 +1,19 @@
 package com.devsuperior.dslearnbds.entities;
 
-import com.devsuperior.dslearnbds.enuns.ResourceType;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "tb_resource")
+@Table(name = "tb_section")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Resource implements Serializable {
-    private static final long serialVersionUID = 3042306914305246863L;
+public class Section implements Serializable {
+    private static final long serialVersionUID = 7516322902955118649L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,14 +28,12 @@ public class Resource implements Serializable {
 
     private String imgUri;
 
-    private ResourceType type;
-
-    private String externalLink;
+    @ManyToOne
+    @JoinColumn(name = "resource_id")
+    private Resource resource;
 
     @ManyToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;
+    @JoinColumn(name = "prerequisite_id")
+    private Section prerequisite;
 
-    @OneToMany(mappedBy = "resource")
-    private List<Section> sections = new ArrayList<>();
 }
