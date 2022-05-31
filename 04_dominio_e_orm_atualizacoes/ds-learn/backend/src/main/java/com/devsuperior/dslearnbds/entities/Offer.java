@@ -4,17 +4,16 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Instant;
 
 @Entity
-@Table(name = "tb_course")
+@Table(name = "tb_offer")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Course implements Serializable {
+public class Offer implements Serializable {
     private static final long serialVersionUID = -3785010529612483765L;
 
     @Id
@@ -22,13 +21,16 @@ public class Course implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    private String name;
+    private String edition;
 
-    private String imgUri;
+    private Instant startMoment;
 
-    private String imgGrayUri;
+    private Instant endMoment;
 
-    @OneToMany(mappedBy = "course")
-    private List<Offer> offers = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+
 
 }
