@@ -25,6 +25,7 @@ public class Offer implements Serializable {
 
     private String edition;
 
+
     private Instant startMoment;
 
     private Instant endMoment;
