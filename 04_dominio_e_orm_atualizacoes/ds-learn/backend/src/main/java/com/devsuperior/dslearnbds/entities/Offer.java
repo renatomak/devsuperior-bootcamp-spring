@@ -25,9 +25,10 @@ public class Offer implements Serializable {
 
     private String edition;
 
-
+    @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private Instant startMoment;
 
+    @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private Instant endMoment;
 
     @ManyToOne
