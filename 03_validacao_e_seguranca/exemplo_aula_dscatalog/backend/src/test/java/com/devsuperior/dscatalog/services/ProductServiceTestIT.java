@@ -42,7 +42,6 @@ class ProductServiceTestIT {
         existingId = 1L;
         nonExistingId = 1000L;
         countTotalProducts = 25;
-
     }
 
     @Test
