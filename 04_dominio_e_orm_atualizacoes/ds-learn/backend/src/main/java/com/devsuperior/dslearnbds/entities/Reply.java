@@ -6,18 +6,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
-@Table(name = "tb_topic")
+@Table(name = "tb_reply")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Topic implements Serializable {
+public class Reply implements Serializable {
     private static final long serialVersionUID = 5014327777408429481L;
 
     @Id
@@ -25,41 +23,24 @@ public class Topic implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    private String title;
-
     @Column(columnDefinition = "TEXT")
     private String body;
 
     @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private Instant moment;
 
+    @ManyToOne
+    @JoinColumn(name = "topic_id")
+    private Topic topic;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
     private User author;
 
-    @ManyToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;
-
-    @ManyToOne
-    @JoinColumn(name = "lesson_id")
-    private Lesson lesson;
-
     @ManyToMany
-    @JoinTable(name = "tb_topic_likes",
-            joinColumns = @JoinColumn(name = "topic_id"),
+    @JoinTable(name = "tb_reply_likes",
+            joinColumns = @JoinColumn(name = "reply_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private Set<Topic> likes = new HashSet<>();
-
-    @OneToMany(mappedBy = "topic")
-    private List<Reply> replies = new ArrayList<>();
-
-    @ManyToOne
-    @JoinColumn(name = "reply_id")
-    private Reply answer;
-
-
-
+    private List<User> likes = new ArrayList<>();
 }
