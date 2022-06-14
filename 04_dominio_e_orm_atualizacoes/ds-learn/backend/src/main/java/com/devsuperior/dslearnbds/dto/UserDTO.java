@@ -3,7 +3,11 @@ package com.devsuperior.dslearnbds.dto;
 import java.io.Serializable;
 
 import com.devsuperior.dslearnbds.entities.User;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -26,27 +30,4 @@ public class UserDTO implements Serializable {
 		email = entity.getEmail();
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 }
