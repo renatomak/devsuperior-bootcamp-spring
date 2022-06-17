@@ -19,12 +19,14 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "tb_user")
+@NoArgsConstructor
 public class User implements UserDetails, Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -43,9 +45,6 @@ public class User implements UserDetails, Serializable {
 
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications = new ArrayList<>();
-
-    public User() {
-    }
 
     public User(Long id, String name, String email, String password) {
         super();
