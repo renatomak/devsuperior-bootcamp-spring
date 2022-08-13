@@ -27,5 +27,4 @@ public class Content extends Lesson  implements Serializable {
     public Content() {
     }
 
-
 }

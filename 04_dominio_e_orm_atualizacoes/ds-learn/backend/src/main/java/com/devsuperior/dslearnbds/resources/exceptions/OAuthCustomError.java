@@ -11,6 +11,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OAuthCustomError {
+    private static final long serialVersionUID = -5431600704545512316L;
 
     private String error;
 
